@@ -5,6 +5,7 @@ body {
 header {
     position: sticky;
     top: 0;
+    z-index: 10;
 
     background-color: #B43F3F;
     padding: 1.5rem 3rem;
