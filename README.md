@@ -1,12 +1,29 @@
-# React + Vite
+# App de Blog
+App genérica de Blog  
++ ver una publicación con base en su ID 
++ ver publicaciones relacionadas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Estructura del proyecto  
++ reactjs  
++ vite  
++ yarn (gestor de paquetes)  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Instalación  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### clonar repositorio
+`git clone <URL_REPO>`  
+
+### instalar paquetes  
+Instala los paquetes usando yarn  
+`yarn install`
+
+### iniciar app  
+`yarn dev`
+
+
+## Pruebas  
+
+### intercambiar publicación actual
++ Da clic sobre los elementos de publicaciones recientes para intercambiar la publicación actual
