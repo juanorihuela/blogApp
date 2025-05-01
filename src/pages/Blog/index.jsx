@@ -27,15 +27,6 @@ function Blog() {
         setRelatedList(currentRelated);
     }, [params]);
 
-    useEffect(() => {
-        const postId = params.postId;
-        const currentPost = postList.publicaciones.find((post) => post.id == postId);
-        setPostData(currentPost);
-
-        const currentRelated = postList.publicaciones.filter((post) => post.id != postId);
-        setRelatedList(currentRelated);
-    }, []);
-
     return (
         <div id="blogContainer">
             <div id="blogHeader">
