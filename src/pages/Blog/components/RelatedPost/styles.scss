@@ -1,0 +1,30 @@
+.relatedContainer {
+    display: flex;
+    cursor: pointer;
+    transition: 0.2s;
+
+    .relatedImage {
+        padding: 1rem;
+        img {
+            width: 7rem;
+            height: 5rem;
+            object-fit: cover;
+        }
+    }
+
+    .relatedContent {
+        padding: 1rem;
+        
+        h6 {
+            color: #F8EDED;
+            margin: 0;
+            font-size: 1rem;
+        }
+        small {
+            color: #FF8225;
+        }
+    }
+}
+.relatedContainer:hover {
+    background-color: #222831;
+}

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+
+import RelatedPost from "./components/RelatedPost"
 
 import postList from "../../data/blog.json";
 
@@ -9,11 +11,29 @@ import "./styles.scss";
 function Blog() {
     const params = useParams();
     const [postData, setPostData] = useState({});
+    const [relatedList, setRelatedList] = useState([]);
+    const navigate = useNavigate();
+
+    const onClickEvent = (id) => {
+        navigate(`/blog/${id}`);
+    };
 
     useEffect(() => {
         const postId = params.postId;
         const currentPost = postList.publicaciones.find((post) => post.id == postId);
         setPostData(currentPost);
+
+        const currentRelated = postList.publicaciones.filter((post) => post.id != postId);
+        setRelatedList(currentRelated);
+    }, [params]);
+
+    useEffect(() => {
+        const postId = params.postId;
+        const currentPost = postList.publicaciones.find((post) => post.id == postId);
+        setPostData(currentPost);
+
+        const currentRelated = postList.publicaciones.filter((post) => post.id != postId);
+        setRelatedList(currentRelated);
     }, []);
 
     return (
@@ -57,8 +77,22 @@ function Blog() {
                 </div>
 
                 <div id="relatedPost">
-                    <div>
-                        
+                    <div id="relatedSection">
+                        {relatedList.map((post) =>
+                            <RelatedPost
+                                key={post.id}
+                                id={post.id}
+                                relatedPostData={post}
+                                onClickEvent={() => onClickEvent(post.id)}
+                            />
+                        )}
+                    </div>
+                    <div id="tagsSection">
+                        <ul>
+                            {postData?.tags?.map((tag) => 
+                                <li key={tag}>{ tag }</li>
+                            )}
+                        </ul>
                     </div>
                 </div>
             </div>
